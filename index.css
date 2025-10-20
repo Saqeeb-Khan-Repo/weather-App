@@ -1,0 +1,78 @@
+body {
+  background-color: beige;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+.wheatherForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.inputDisplay {
+  padding: 20px;
+  width: 350px;
+  border: 2px solid rgba(0, 0, 0, 0.282);
+  border-radius: 30px;
+  font-size: 1.5rem;
+  margin-left: 50px;
+  color: darkslateblue;
+}
+button[type="submit"] {
+  background-color: rgb(5, 147, 100);
+  padding: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: whitesmoke;
+  font-weight: 700;
+
+  &:hover {
+    background-color: rgba(7, 177, 75, 0.971);
+  }
+  &:active {
+    transform: scale(1.1);
+  }
+}
+.card {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid rgba(0, 0, 0, 0.448);
+  width: 350px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 183, 255, 0.549),
+    rgba(255, 166, 0, 0.508)
+  );
+  box-shadow: 2px 2px 20px rgba(16, 12, 12, 0.827);
+}
+.cityDisplay,
+.tempDisplay {
+  font-size: 3.5rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.604);
+}
+.humidityDisplay {
+  font-size: 2rem;
+}
+.stateDisplay {
+  font-style: italic;
+  font-size: 2rem;
+  margin-top: 0;
+}
+.emojiDisplay {
+  font-size: 4rem;
+  margin-top: 0;
+}
+.errorDisplay {
+  margin-top: 0;
+  font-size: 2rem;
+}
