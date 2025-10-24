@@ -1,92 +1,177 @@
+/* Global Base Styles (Mobile-first) */
 body {
   background-image: url(w.webp);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  align-items: center;
   display: flex;
   flex-direction: column;
-  font-weight: bold;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  color: rgba(0, 0, 0, 0.7);
 }
+
+/* Title */
+h1 {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Weather Form */
 .wheatherForm {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
   margin-bottom: 40px;
+  width: 100%;
+  max-width: 600px;
 }
+
+/* Input */
 .inputDisplay {
-  padding: 13px;
-  width: 350px;
+  padding: 12px;
+  width: 90%;
   border: none;
   border-radius: 10px;
-  font-size: 1.2rem;
-  margin-left: 50px;
+  font-size: 1rem;
   color: darkslateblue;
-  box-shadow: 0 2px 20px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+  transition: box-shadow 0.3s ease;
 }
+
+.inputDisplay:focus {
+  box-shadow: 0 4px 20px rgba(14, 176, 240, 0.5);
+}
+
+/* Button */
 button[type="submit"] {
   background: linear-gradient(
     180deg,
-    rgba(14, 176, 240, 0.803),
-    rgba(227, 175, 80, 0.773)
+    rgba(14, 176, 240, 0.8),
+    rgba(227, 175, 80, 0.8)
   );
-  padding: 10px;
+  padding: 12px 20px;
+  border: none;
   border-radius: 30px;
   cursor: pointer;
-  font-size: 2rem;
-  color: rgb(29, 28, 28);
+  font-size: 1rem;
   font-weight: 700;
-  box-shadow: 0 2px 12px;
-
-  &:hover {
-    background-color: rgba(227, 175, 80, 0.773);
-    &:active {
-      background-color: rgba(191, 0, 255, 0.39);
-    }
-  }
+  color: #1d1c1c;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
+
+button[type="submit"]:hover {
+  background-color: rgba(227, 175, 80, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Weather Card */
 .card {
   margin-top: 20px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  border: 3px solid rgba(0, 0, 0, 0.448);
-  width: 350px;
+  justify-content: center;
+  width: 90%;
+  max-width: 350px;
+  padding: 25px;
+  border-radius: 18px;
   background: linear-gradient(
-    180deg,
-    rgba(121, 207, 241, 0.803),
-    rgba(227, 175, 80, 0.773)
+    145deg,
+    rgba(80, 170, 255, 0.8),
+    rgba(255, 210, 120, 0.7)
   );
-  box-shadow: 2px 2px 20px rgba(16, 12, 12, 0.827);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #002b5c;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.4);
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 1.2rem;
+  color: #222;
+  opacity: 0.9;
+}
+
+/* Info Displays */
 .cityDisplay,
 .tempDisplay {
-  font-size: 3.5rem;
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: rgba(27, 111, 237, 0.825);
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: rgba(27, 111, 237, 0.85);
 }
-.humidityDisplay {
-  font-size: 2rem;
-}
+
+.humidityDisplay,
 .stateDisplay {
+  font-size: 1.5rem;
   font-style: italic;
-  font-size: 2rem;
-  margin-top: 0;
 }
+
 .emojiDisplay {
-  font-size: 4rem;
-  margin-top: 0;
+  font-size: 3rem;
 }
+
 .errorDisplay {
-  margin-top: 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
+  color: crimson;
 }
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 5rem;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.627);
+
+/* Responsive Breakpoints */
+
+/* Tablets */
+@media (min-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .wheatherForm {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  .inputDisplay {
+    width: 60%;
+    font-size: 1.1rem;
+  }
+  button[type="submit"] {
+    width: auto;
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+  .card {
+    max-width: 450px;
+    padding: 30px;
+  }
+  .cityDisplay,
+  .tempDisplay {
+    font-size: 3.5rem;
+  }
 }
