@@ -1,4 +1,4 @@
-const apiKey = "511c13c381c48c1baacda44cc9a3292c";
+const apiKey = "";
 const wheatherForm = document.querySelector(".wheatherForm");
 const cityInput = document.querySelector(".inputDisplay");
 const card = document.querySelector(".card");
